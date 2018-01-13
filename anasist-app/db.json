@@ -1,0 +1,42 @@
+{
+  "headers": [
+    "CustomerId",
+    "Revenue",
+    "Country"
+  ],
+  "initial_issues": [
+    {
+      "id": "id_nan",
+      "theme": "ID",
+      "summary": "Many N/A's in ID column",
+      "details": "The ID column contains many unknowns. We can still train the model but it's worth looking at the data set",
+      "stat": "0.15",
+      "status": "yellow"
+    },
+    {
+      "id": "target_nan",
+      "theme": "Target",
+      "summary": "Many N/A's in target column",
+      "details": "The Target column contains many unknowns. We can still train the model but it's worth looking at the data set",
+      "stat": "0.12",
+      "status": "yellow"
+    },
+    {
+      "id": "too_many_classes",
+      "theme": "Target",
+      "summary": "Many classes in target column",
+      "details": "Your target data column contains too many different classes. It might be hard to generalize",
+      "stat": "300",
+      "status": "red"
+    }
+  ],
+  "models": [
+    {
+      "id": 1,
+      "name": "Churn model",
+      "description": "This is a churn model",
+      "progress": 0.9,
+      "type": "classification"
+    }
+  ]
+}
