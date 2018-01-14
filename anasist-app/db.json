@@ -37,6 +37,84 @@
       "description": "This is a churn model",
       "progress": 0.9,
       "type": "classification"
+    },
+    {
+      "id": 2,
+      "name": "Regression",
+      "description": "This is a regression model",
+      "progress": 1,
+      "type": "regression"
+    }
+  ],
+  "model_results": [
+    { "id": 1,
+      "performance": [
+        {
+          "accuracy": 0.95,
+          "auc": 0.9,
+          "running_time": 3000,
+          "false_positive": 200,
+          "true_positive": 1000,
+          "false_negative": 300,
+          "true_negative": 400
+        }
+      ],
+      "interpretation": {
+        "feature_importance": [
+          {"feature": "rooms", "importance": 0.6},
+          {"feature": "sqm", "importance": 0.4},
+          {"feature": "area", "importance": 0.2},
+          {"feature": "basement", "importance": 0.3}
+        ]
+      },
+      "transformations": {
+        "outliers": {
+          "name": "Removing outliers",
+          "issue": "Your dataset has some notable outliers",
+          "solution": "Removed top 1% of outliers",
+          "impact": 120
+        },
+        "imbalance": {
+          "name": "Imbalanced dataset",
+          "issue": "Your dataset is very imbalanced",
+          "solution": "Upsampled your smallest class",
+          "impact": 120
+        }
+      },
+      "predictions": {
+        "5_most_correct": {
+          "headers": ["id", "label", "probability", "country"],
+          "values": [
+            [123, 1, 0.8, "Denmark"],
+            [124, 1, 0.8, "Denmark"],
+            [125, 1, 0.8, "Denmark"],
+            [126, 1, 0.7, "Denmark"],
+            [127, 1, 0.6, "Denmark"]
+          ]
+        },
+        "5_most_incorrect": {
+          "headers": ["id", "label", "probability", "country"],
+          "values": [
+            [123, 0, 0.8, "Denmark"],
+            [124, 1, 0.2, "Denmark"],
+            [125, 0, 0.8, "Denmark"],
+            [126, 1, 0.7, "Denmark"],
+            [127, 0, 0.6, "Denmark"]
+          ]
+        }
+      }
+    }
+  ],
+  "deploy": [
+    {
+      "id": 1,
+      "deployed": true,
+      "deploy_url": "http://test.com"
+    },
+    {
+      "id": 2,
+      "deployed": false,
+      "deploy_url": ""
     }
   ]
 }

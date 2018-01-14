@@ -32,7 +32,7 @@ const styles = theme => ({
   },
   content: {
     verticalAlign: 'middle',
-  }
+  },
 });
 
 class FirebaseUploader extends Component {

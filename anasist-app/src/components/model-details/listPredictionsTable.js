@@ -1,5 +1,5 @@
 import React  from 'react';
-import {ListModelsTableRow} from "./listModelsTableRow";
+import {ListPredictionsTableRow} from "./listPredictionsTableRow";
 import { withStyles } from 'material-ui/styles';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
@@ -15,22 +15,18 @@ const styles = theme => ({
   },
 });
 
-export const ListModelsTable = props => {
+export const ListPredictionsTable = props => {
   const { classes } = props;
   return (
     <Paper className={classes.root}>
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell>View</TableCell>
-            <TableCell>Model name</TableCell>
-            <TableCell>Model description</TableCell>
-            <TableCell>Type</TableCell>
-            <TableCell>Progress</TableCell>
+            {props.headers.map(name => <TableCell>{name}</TableCell>)}
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.models.map(model => <ListModelsTableRow key={model.id} {...model}/>)}
+          {props.values.map(prediction => <ListPredictionsTableRow key={prediction.id} values={prediction}/>)}
         </TableBody>
       </Table>
     </Paper>
@@ -38,4 +34,4 @@ export const ListModelsTable = props => {
   )
 };
 
-export default withStyles(styles)(ListModelsTable)
+export default withStyles(styles)(ListPredictionsTable)

@@ -13,14 +13,9 @@ import IconButton from 'material-ui/IconButton';
 import Hidden from 'material-ui/Hidden';
 import Divider from 'material-ui/Divider';
 import MenuIcon from 'material-ui-icons/Menu';
+import CloudDoneIcon from 'material-ui-icons/CloudDone';
 import Button from 'material-ui/Button';
-
-import Collapse from 'material-ui/transitions/Collapse';
-import ExpandLess from 'material-ui-icons/ExpandLess';
-import ExpandMore from 'material-ui-icons/ExpandMore';
 import HomeIcon from 'material-ui-icons/Home';
-import EventIcon from 'material-ui-icons/Event';
-import DashboardIcon from 'material-ui-icons/Dashboard';
 import {
   Link,
   NavLink
@@ -147,33 +142,14 @@ class ResponsiveDrawer extends React.Component {
               <ListItemText classes={this.props.location.pathname === "/" ? {text: classes.text} : null} inset primary="Home" />
             </ListItem>
           </Link>
-          <Link className={classes.subLink} to={{ pathname: "/jobs" }}>
+          <Link className={classes.subLink} to={{ pathname: "/models" }}>
             <ListItem button>
               <ListItemIcon>
-                <EventIcon />
+                <CloudDoneIcon />
               </ListItemIcon>
-              <ListItemText classes={(this.props.location.pathname.includes("/jobs") || this.props.location.pathname.includes("/entries"))
-                ? {text: classes.text}
-                : null} inset primary="Jobs" />
+              <ListItemText classes={this.props.location.pathname === "/models" ? {text: classes.text} : null} inset primary="Models" />
             </ListItem>
           </Link>
-          <ListItem button onClick={() => this.handleClick("reports")}>
-            <ListItemIcon>
-              <DashboardIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="Reports" />
-            {this.state.reportsOpen ? <ExpandLess /> : <ExpandMore />}
-          </ListItem>
-          <Collapse in={this.state.reportsOpen} transitionDuration="auto" unmountOnExit>
-            <CustomNavLink to="/reports"
-                           classes={classes}
-                           pathname={this.props.location.pathname}
-                           displayName="Job Reports" />
-            <CustomNavLink to="/reports/activity"
-                           classes={classes}
-                           pathname={this.props.location.pathname}
-                           displayName="Activity Reports" />
-          </Collapse>
         </List>
       </div>
     );

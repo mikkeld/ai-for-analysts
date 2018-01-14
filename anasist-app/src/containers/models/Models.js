@@ -18,7 +18,7 @@ class Models extends React.Component {
   }
 
   componentDidMount() {
-    getModels().then(models => this.setState(models))
+    getModels().then(models => this.setState({models: models}))
   }
 
   render() {
@@ -27,7 +27,6 @@ class Models extends React.Component {
       <div className={classes.root}>
         <ListModelsTable models={this.state.models}/>
       </div>
-
     );
   }
 }

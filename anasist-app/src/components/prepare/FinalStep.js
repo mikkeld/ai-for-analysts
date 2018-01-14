@@ -70,8 +70,8 @@ class FinalStep extends Component {
             )
           })
         }
-        <Button raised color="primary" onClick={this.props.buildModel}>
-          Build model
+        <Button raised color="primary" onClick={this.props.onFinishClick}>
+          Finish
         </Button>
       </div>
     )

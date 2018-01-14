@@ -11,6 +11,7 @@ import FinalStep from "../../components/prepare/FinalStep";
 import CustomStepper from "../../shared/Stepper";
 import {analyse, getHeaders} from "../../utils/prepareService";
 import { LinearProgress } from 'material-ui/Progress';
+import BuildModelDialog from "../../components/prepare/buildModelDialog";
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -39,7 +40,8 @@ const initialFormState = {
   selectedProblemType: ProblemTypes.classification,
   id: "",
   target: "",
-  upload: undefined
+  upload: undefined,
+  buildModelDialogOpen: false
 };
 
 const BuildingModel = props => {
@@ -111,7 +113,18 @@ class Prepare extends React.Component {
   };
 
   buildModel = () => {
-    this.setState({buildingModel: true})
+    this.handleBuildModelClose();
+    this.setState({
+      buildingModel: true
+    })
+  };
+
+  handleBuildModelOpen = () => {
+    this.setState({ buildModelDialogOpen: true });
+  };
+
+  handleBuildModelClose = () => {
+    this.setState({ buildModelDialogOpen: false });
   };
 
   render() {
@@ -131,7 +144,7 @@ class Prepare extends React.Component {
     ];
     const finalStep = <FinalStep {...this.state.currentProject}
                                  assessment={this.state.assessment}
-                                 buildModel={this.buildModel}
+                                 onFinishClick={this.handleBuildModelOpen}
                       />;
 
     return (
@@ -146,6 +159,11 @@ class Prepare extends React.Component {
                            finalStep={finalStep}
             />
         }
+        <BuildModelDialog open={this.state.buildModelDialogOpen}
+                          handleClose={this.handleBuildModelClose}
+                          buildModel={this.buildModel}
+                          {...this.state.currentProject}
+        />
       </Paper>
     );
   }

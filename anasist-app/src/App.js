@@ -9,6 +9,8 @@ import {
 } from 'react-router-dom';
 import ResponsiveDrawer from './components/shared/responsiveDrawer';
 import Models from "./containers/models/Models";
+import ModelDetails from "./containers/model-details/modelDetails";
+import Deploy from "./containers/deploy/Deploy";
 
 class App extends Component {
   constructor() {
@@ -50,6 +52,8 @@ class App extends Component {
               <Route exact path="/" component={Prepare}/>
               <Route exact path="/scope" component={Scope}/>
               <Route exact path="/models" component={Models}/>
+              <Route path="/models/:id" render={({match}) => <ModelDetails id={match.params.id}/>}/>
+              <Route path="/deploy/:id" render={({match}) => <Deploy id={match.params.id}/>}/>
             </div>
           </ResponsiveDrawer>
         )}
