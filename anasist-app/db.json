@@ -36,18 +36,144 @@
       "name": "Churn model",
       "description": "This is a churn model",
       "progress": 0.9,
-      "type": "classification"
+      "type": "classification",
+      "deployed": true
     },
     {
       "id": 2,
       "name": "Regression",
       "description": "This is a regression model",
       "progress": 1,
-      "type": "regression"
+      "type": "regression",
+      "deployed": false
     }
   ],
   "model_results": [
     { "id": 1,
+      "performance": [
+        {
+          "accuracy": 0.95,
+          "auc": 0.9,
+          "running_time": 3000,
+          "false_positive": 200,
+          "true_positive": 1000,
+          "false_negative": 300,
+          "true_negative": 400,
+          "precision_data": [[0.1, 0.4], [0.2, 0.5], [0.3, 0.7]]
+        }
+      ],
+      "interpretation": {
+        "feature_importance": [
+          {"feature": "rooms", "importance": 0.6},
+          {"feature": "sqm", "importance": 0.4},
+          {"feature": "area", "importance": 0.2},
+          {"feature": "basement", "importance": 0.3}
+        ]
+      },
+      "transformations": {
+        "outliers": {
+          "name": "Removing outliers",
+          "issue": "Your dataset has some notable outliers",
+          "solution": "Removed top 1% of outliers",
+          "impact": 120
+        },
+        "imbalance": {
+          "name": "Imbalanced dataset",
+          "issue": "Your dataset is very imbalanced",
+          "solution": "Upsampled your smallest class",
+          "impact": 120
+        }
+      },
+      "hints": [
+        {"id": 1, "theme": "Low AUC", "summary": "AUC below 0.65 is usually considered poor", "details": "TBD"},
+        {"id": 2, "theme": "TBU", "summary": "AUC below 0.65 is usually considered poor", "details": "TBD"}
+      ],
+      "predictions": {
+        "5_most_correct": {
+          "headers": ["id", "label", "probability", "country"],
+          "values": [
+            [123, 1, 0.8, "Denmark"],
+            [124, 1, 0.8, "Denmark"],
+            [125, 1, 0.8, "Denmark"],
+            [126, 1, 0.7, "Denmark"],
+            [127, 1, 0.6, "Denmark"]
+          ]
+        },
+        "5_most_incorrect": {
+          "headers": ["id", "label", "probability", "country"],
+          "values": [
+            [123, 0, 0.8, "Denmark"],
+            [124, 1, 0.2, "Denmark"],
+            [125, 0, 0.8, "Denmark"],
+            [126, 1, 0.7, "Denmark"],
+            [127, 0, 0.6, "Denmark"]
+          ]
+        }
+      }
+    },
+    { "id": 2,
+      "performance": [
+        {
+          "accuracy": 0.95,
+          "auc": 0.9,
+          "running_time": 3000,
+          "false_positive": 200,
+          "true_positive": 1000,
+          "false_negative": 300,
+          "true_negative": 400,
+          "precision_data": [[0.1, 0.4], [0.2, 0.5], [0.3, 0.7]]
+        }
+      ],
+      "interpretation": {
+        "feature_importance": [
+          {"feature": "rooms", "importance": 0.6},
+          {"feature": "sqm", "importance": 0.4},
+          {"feature": "area", "importance": 0.2},
+          {"feature": "basement", "importance": 0.3}
+        ]
+      },
+      "transformations": {
+        "outliers": {
+          "name": "Removing outliers",
+          "issue": "Your dataset has some notable outliers",
+          "solution": "Removed top 1% of outliers",
+          "impact": 120
+        },
+        "imbalance": {
+          "name": "Imbalanced dataset",
+          "issue": "Your dataset is very imbalanced",
+          "solution": "Upsampled your smallest class",
+          "impact": 120
+        }
+      },
+      "hints": [
+        {"id": 1, "theme": "Low AUC", "summary": "AUC below 0.65 is usually considered poor", "details": "TBD"},
+        {"id": 2, "theme": "TBU", "summary": "AUC below 0.65 is usually considered poor", "details": "TBD"}
+      ],
+      "predictions": {
+        "5_most_correct": {
+          "headers": ["id", "label", "probability", "country"],
+          "values": [
+            [123, 1, 0.8, "Denmark"],
+            [124, 1, 0.8, "Denmark"],
+            [125, 1, 0.8, "Denmark"],
+            [126, 1, 0.7, "Denmark"],
+            [127, 1, 0.6, "Denmark"]
+          ]
+        },
+        "5_most_incorrect": {
+          "headers": ["id", "label", "probability", "country"],
+          "values": [
+            [123, 0, 0.8, "Denmark"],
+            [124, 1, 0.2, "Denmark"],
+            [125, 0, 0.8, "Denmark"],
+            [126, 1, 0.7, "Denmark"],
+            [127, 0, 0.6, "Denmark"]
+          ]
+        }
+      }
+    },
+    { "id": "sample1",
       "performance": [
         {
           "accuracy": 0.95,
@@ -103,6 +229,38 @@
           ]
         }
       }
+    }
+  ],
+  "samples": [
+    {
+      "id": "sample1",
+      "title": "Churn dataset Amazon",
+      "description": "Here's a lengthy dataset...",
+      "media_url": "https://material-ui-next.com/static/images/cards/contemplative-reptile.jpg"
+    },
+    {
+      "id": "sample2",
+      "title": "Churn dataset Amazon",
+      "description": "Here's a lengthy dataset...",
+      "media_url": "https://material-ui-next.com/static/images/cards/contemplative-reptile.jpg"
+    }
+  ],
+  "sample_datasets": [
+    {
+      "id": "sample1",
+      "headers": ["id", "label", "probability", "country"],
+      "values": [
+        [123, 0, 0.8, "Denmark"],
+        [124, 1, 0.2, "Denmark"],
+        [125, 0, 0.8, "Denmark"],
+        [126, 1, 0.7, "Denmark"],
+        [127, 0, 0.6, "Denmark"],
+        [127, 0, 0.6, "Denmark"],
+        [127, 0, 0.6, "Denmark"],
+        [127, 0, 0.6, "Denmark"],
+        [127, 0, 0.6, "Denmark"],
+        [127, 0, 0.6, "Denmark"]
+      ]
     }
   ],
   "deploy": [

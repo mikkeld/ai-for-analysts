@@ -50,7 +50,7 @@ const BuildModelDialog = props => {
           <Button onClick={props.handleClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={props.buildModel} color="primary" autoFocus>
+          <Button onClick={props.buildModel} color="primary" raised autoFocus>
             Build model
           </Button>
         </DialogActions>

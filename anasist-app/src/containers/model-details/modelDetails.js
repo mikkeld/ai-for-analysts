@@ -7,6 +7,7 @@ import {getModelData} from "../../utils/modelsService";
 import Performance from "../../components/model-details/Performance";
 import Interpretation from "../../components/model-details/Interpretation";
 import Transformations from "../../components/model-details/Transformations";
+import Hints from "../../components/model-details/Hints";
 
 function TabContainer(props) {
   return (
@@ -59,7 +60,7 @@ class ModelDetails extends React.Component {
           <Tab label="Performance" />
           <Tab label="Understand" />
           <Tab label="Transformations" />
-          <Tab label="Predictions" />
+          <Tab label="Hints" />
         </Tabs>
         {value === 0 && <TabContainer>
                           {this.state.data && <Performance {...this.state.data.performance[0]} />}
@@ -70,7 +71,7 @@ class ModelDetails extends React.Component {
                           />
                         </TabContainer>}
         {value === 2 && <TabContainer><Transformations {...this.state.data.transformations}/></TabContainer>}
-        {value === 3 && <TabContainer>Item Three</TabContainer>}
+        {value === 3 && <TabContainer><Hints hints={this.state.data.hints} /></TabContainer>}
       </div>
     );
   }

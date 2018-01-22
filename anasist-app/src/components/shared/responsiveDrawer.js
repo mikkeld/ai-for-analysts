@@ -14,6 +14,7 @@ import Hidden from 'material-ui/Hidden';
 import Divider from 'material-ui/Divider';
 import MenuIcon from 'material-ui-icons/Menu';
 import CloudDoneIcon from 'material-ui-icons/CloudDone';
+import InsertEmotionIcon from 'material-ui-icons/InsertEmoticon';
 import Button from 'material-ui/Button';
 import HomeIcon from 'material-ui-icons/Home';
 import {
@@ -139,7 +140,7 @@ class ResponsiveDrawer extends React.Component {
               <ListItemIcon>
                 <HomeIcon />
               </ListItemIcon>
-              <ListItemText classes={this.props.location.pathname === "/" ? {text: classes.text} : null} inset primary="Home" />
+              <ListItemText classes={this.props.location.pathname === '/' ? {text: classes.text} : null} inset primary="Home" />
             </ListItem>
           </Link>
           <Link className={classes.subLink} to={{ pathname: "/models" }}>
@@ -147,7 +148,15 @@ class ResponsiveDrawer extends React.Component {
               <ListItemIcon>
                 <CloudDoneIcon />
               </ListItemIcon>
-              <ListItemText classes={this.props.location.pathname === "/models" ? {text: classes.text} : null} inset primary="Models" />
+              <ListItemText classes={this.props.location.pathname.includes('/models') ? {text: classes.text} : null} inset primary="Models" />
+            </ListItem>
+          </Link>
+          <Link className={classes.subLink} to={{ pathname: "/samples" }}>
+            <ListItem button>
+              <ListItemIcon>
+                <InsertEmotionIcon />
+              </ListItemIcon>
+              <ListItemText classes={this.props.location.pathname.includes("/samples") ? {text: classes.text} : null} inset primary="Samples" />
             </ListItem>
           </Link>
         </List>

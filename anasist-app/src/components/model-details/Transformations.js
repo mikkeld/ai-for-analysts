@@ -62,7 +62,7 @@ class Transformations extends React.Component {
             <Typography className={classes.cardContentText} type="display3">{this.props.outliers.impact}</Typography>
             <Typography className={classes.cardContentText} type="p">Outliers can have negative impact on the performance of the model</Typography>
           </CustomCard>
-          <CustomCard title="Imbalance" classes={classes}>
+          <CustomCard title="Outlier" classes={classes}>
             <Typography className={classes.cardContentText} type="caption">{this.props.imbalance.solution}</Typography>
             <Typography className={classes.cardContentText} type="display3">{this.props.imbalance.impact}</Typography>
             <Typography className={classes.cardContentText} type="p">An imbalanced dataset cannot rely on accuracy</Typography>

@@ -6,6 +6,7 @@ import { indigo, blue } from 'material-ui/colors';
 import Grid from 'material-ui/Grid';
 import Card, { CardActions, CardContent } from 'material-ui/Card';
 import {formatDuration, formatPercentage} from "../../utils/utils";
+import { Chart } from 'react-google-charts';
 
 const CustomCard = props => {
   return (
@@ -21,6 +22,8 @@ const CustomCard = props => {
     </Grid>
   )
 };
+
+const options = {"legend":false,"hAxis":{"title":"Score"},"vAxis":{"title":"Precision"}};
 
 const styles = theme => ({
   textField: {
@@ -79,6 +82,21 @@ class Performance extends React.Component {
             <Typography className={classes.cardContentText} type="p">Total running time for the model</Typography>
           </CustomCard>
         </Grid>
+        <Typography type="title" gutterBottom>
+          Analyse performance
+        </Typography>
+        <Typography type="caption" gutterBottom>
+          Here you can analyse the performance further
+        </Typography>
+        <Chart
+          chartType="LineChart"
+          columns={[{"label": "time", "type": "number"}, {"label": "Precision and recall", "type": "number"}]}
+          rows={this.props.precision_data}
+          graph_id="LineChart"
+          width="100%"
+          height="400px"
+          options={options}
+        />
       </div>
     );
   }

@@ -19,7 +19,7 @@ const Step2 = props => {
     return (
       <div className={classes.root}>
         <Typography type="display1" gutterBottom align="center">
-          File uploaded successfully
+          File uploaded successfully<br />
           <Icon color="disabled" style={{ fontSize: 72 }}>
             check_circle
           </Icon>

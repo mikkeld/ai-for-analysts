@@ -58,7 +58,6 @@ class CustomStepper extends React.Component {
     const { classes } = this.props;
     const steps = this.props.stepLabels;
     const { activeStep } = this.state;
-
     return (
       <div className={classes.root}>
         <Stepper activeStep={activeStep} alternativeLabel>
@@ -87,7 +86,7 @@ class CustomStepper extends React.Component {
                 >
                   Back
                 </Button>
-                <Button raised color="primary" onClick={this.handleNext}>
+                <Button raised disabled={!this.props.completedSteps[activeStep]} color="primary" onClick={this.handleNext}>
                   {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                 </Button>
               </div>

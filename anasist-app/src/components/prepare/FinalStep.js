@@ -24,6 +24,9 @@ const styles = theme => ({
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
   },
+  wrapper: {
+    marginBottom: theme.spacing.unit * 3,
+  }
 });
 
 class FinalStep extends Component {
@@ -48,6 +51,7 @@ class FinalStep extends Component {
             We found a few issues with your data set
           </Typography>
         }
+        <div className={classes.wrapper}>
         {
           this.props.assessment.map(item => {
             return (
@@ -70,8 +74,9 @@ class FinalStep extends Component {
             )
           })
         }
-        <Button raised color="primary" onClick={this.props.onFinishClick}>
-          Finish
+        </div>
+        <Button raised color="primary" onClick={this.props.onFinishClick} style={{float: 'right'}}>
+          Complete
         </Button>
       </div>
     )

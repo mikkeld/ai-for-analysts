@@ -2,16 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Button from 'material-ui/Button';
+import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import {getDeployData} from "../../utils/modelsService";
 import CodeSnippet from "../../components/shared/CodeSnippet";
 
 const styles = theme => ({
-  root: {
-    flexGrow: 1,
+  root: theme.mixins.gutters({
+    paddingTop: 16,
+    paddingBottom: 16,
     marginTop: theme.spacing.unit * 3,
-    backgroundColor: theme.palette.background.paper,
-  },
+  }),
   wrapper: {
     marginBottom: theme.spacing.unit * 3,
   }
@@ -31,7 +32,7 @@ class Deploy extends React.Component {
     const { classes } = this.props;
     if (this.state.model.hasOwnProperty('deployed') && !this.state.model.deployed) {
       return (
-        <div className={classes.root}>
+        <Paper className={classes.root} elevation={4}>
           <div className={classes.wrapper}>
             <Typography type="title" gutterBottom>
               Deploy model
@@ -42,11 +43,11 @@ class Deploy extends React.Component {
             </Typography>
           </div>
           <Button raised color="primary">Deploy model</Button>
-        </div>
+        </Paper>
       )
     } else {
       return (
-        <div className={classes.root}>
+        <Paper className={classes.root} elevation={4}>
           <div className={classes.wrapper}>
             <div className={classes.wrapper}>
               <Typography type="title" gutterBottom>
@@ -71,7 +72,7 @@ class Deploy extends React.Component {
             </div>
             <CodeSnippet/>
           </div>
-        </div>
+        </Paper>
       );
     }
   }

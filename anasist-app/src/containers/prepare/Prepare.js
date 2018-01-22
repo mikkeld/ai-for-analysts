@@ -127,6 +127,19 @@ class Prepare extends React.Component {
     this.setState({ buildModelDialogOpen: false });
   };
 
+  getCompletedSteps = () => {
+    const step1 = this.state.currentProject.name !== "";
+    const step2 = this.state.currentProject.upload;
+    const step3 = this.state.currentProject.target !== "" && this.state.currentProject.id !== "";
+    const finalStep = true;
+    return [
+      step1,
+      step2,
+      step3,
+      finalStep
+    ];
+  };
+
   render() {
     const {classes} = this.props;
     const stepContent = [
@@ -146,7 +159,7 @@ class Prepare extends React.Component {
                                  assessment={this.state.assessment}
                                  onFinishClick={this.handleBuildModelOpen}
                       />;
-
+    const completedSteps = this.getCompletedSteps();
     return (
       <Paper className={classes.root} elevation={4}>
         <Typography type="headline" component="h3">
@@ -157,6 +170,7 @@ class Prepare extends React.Component {
           : <CustomStepper stepLabels={stepLabels}
                            stepContent={stepContent}
                            finalStep={finalStep}
+                           completedSteps={completedSteps}
             />
         }
         <BuildModelDialog open={this.state.buildModelDialogOpen}

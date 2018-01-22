@@ -26,6 +26,7 @@ export const ListModelsTable = props => {
             <TableCell>Model name</TableCell>
             <TableCell>Model description</TableCell>
             <TableCell>Type</TableCell>
+            <TableCell>Deployed</TableCell>
             <TableCell>Progress</TableCell>
           </TableRow>
         </TableHead>
