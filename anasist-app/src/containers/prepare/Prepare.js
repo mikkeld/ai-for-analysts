@@ -85,16 +85,15 @@ class Prepare extends React.Component {
   };
 
   onFileUploadSuccess = file => {
-    getHeaders(file).then(headers => {
+    getHeaders(file).then(res => {
       const updatedProject = {
         ...this.state.currentProject,
         upload: file
       };
       this.setState({
         currentProject: updatedProject,
-        availableColumns: headers
+        availableColumns: res.headers
       }, () => {
-        this.prepareAssessment();
       });
     });
   };
@@ -106,9 +105,9 @@ class Prepare extends React.Component {
       'id': this.state.currentProject.id,
       'upload': this.state.currentProject.upload
     };
-    analyse('initial_issues', inputs).then(assessment => {
-      console.log(assessment);
-      this.setState({assessment: assessment})
+    analyse(inputs).then(res => {
+      console.log(res)
+      this.setState({assessment: res.assessment})
     })
   };
 
@@ -156,6 +155,7 @@ class Prepare extends React.Component {
       />,
     ];
     const finalStep = <FinalStep {...this.state.currentProject}
+                                 prepareAssessment={this.prepareAssessment}
                                  assessment={this.state.assessment}
                                  onFinishClick={this.handleBuildModelOpen}
                       />;

@@ -23,6 +23,10 @@ hr {
     padding: 0
 }
 
+.margin-right {
+    margin-right: 10px;
+}
+
 audio,
 canvas,
 iframe,
@@ -5469,14 +5473,14 @@ screen and (min-resolution: 2dppx) {
 }
 
 .mdl-button--raised.mdl-button--white-colored {
-    background: #0f9d58;
+    background: #ff9800;
     color: #fff;
     margin: 10px;
     min-width: 180px
 }
 
 .mdl-button--raised.mdl-button--white-colored:hover {
-    background: #0b7240
+    background: #ff9800
 }
 
 .mdl-button--raised.mdl-button--white-colored .icon--send-money {
@@ -5808,7 +5812,7 @@ only screen and (min-resolution: 1.3dppx) {
     background: #fff;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
     left: 0;
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
     z-index: 100
@@ -5849,7 +5853,7 @@ only screen and (min-resolution: 1.3dppx) {
     }
 }
 
-.site-header__wallet-logo {
+.site-header-logo {
     height: 25px;
     height: 1.5625rem;
     margin-right: 3px;
@@ -5857,7 +5861,7 @@ only screen and (min-resolution: 1.3dppx) {
 }
 
 @media only screen and (min-width: 64rem) {
-    .site-header__wallet-logo {
+    .site-header-logo {
         height: 32px;
         height: 2rem
     }

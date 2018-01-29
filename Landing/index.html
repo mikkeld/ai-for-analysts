@@ -15,7 +15,6 @@
 
     <link href="/wallet/static/images/fav/favicon.ico" rel="shortcut icon">
 
-    <link rel="apple-touch-icon-precomposed" href="/wallet/static/images/fav/apple-touch-icon-precomposed.png"><link rel="apple-touch-icon-precomposed" sizes="72x72" href="/wallet/static/images/fav/apple-touch-icon-72x72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/wallet/static/images/fav/apple-touch-icon-76x76-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/wallet/static/images/fav/apple-touch-icon-114x114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/wallet/static/images/fav/apple-touch-icon-120x120-precomposed.png">
@@ -27,15 +26,7 @@
 
     <link rel="stylesheet" href="main.css">
 
-    <script>(function(H){H.className=H.className.replace(/\bgoogle\b/,'google-js')})(document.documentElement)</script>
-
     <script src="//www.gstatic.com/external_hosted/modernizr/v2_8_3/basic.js"></script>
-
-    <script>
-      document.createElement('picture');
-    </script>
-
-    <script src="//www.gstatic.com/external_hosted/picturefill/picturefill.min.js"></script>
 
 </head>
 <body>
@@ -43,7 +34,7 @@
     <div class="aux cf">
         <h2 class="site-header__title">
             <a class="site-header__root-link" href="/wallet/" data-g-label="Header Logo">
-                <img class="site-header__wallet-logo" alt="anasist - Machine Learning for Analysts" src="media/logo.png">
+                <img class="site-header-logo" alt="anasist - Machine Learning for Analysts" src="media/logo.png">
             </a>
         </h2>
         <nav class="site-header__main-nav" id="HeaderNav">
@@ -60,23 +51,9 @@
                 </li>
                 <li>
                     <div class="site-header__cta site-header__cta--desktop">
-                        <button id="header-cta" class="get-app mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-g-event="Get the App" data-g-action="click" data-g-label="header:desktop">
-                            Get an invite
+                        <button id="header-cta" class="get-app mdl-button mdl-button--raised mdl-button--white-colored mdl-js-button mdl-js-ripple-effect" data-g-event="Get the App" data-g-action="click" data-g-label="header:desktop">
+                            Request invite
                         </button>
-                        <div class="get-app-menu">
-                            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="header-cta">
-                                <li class="get-app-menu__item mdl-menu__item ">
-                                    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.gmoney&amp;referrer=utm_source%3Dwallet%26utm_medium%3Dwebsite%26utm_campaign%3Dget-the-app" target="_blank" data-g-event="Store" data-g-action="Google Play Store" data-g-label="header:desktop">
-                                        <i class="material-icons get-app-menu__android-icon">&#xE859;</i>Android
-                                    </a>
-                                </li>
-                                <li class="get-app-menu__item mdl-menu__item ">
-                                    <a href="https://itunes.apple.com/us/app/google-wallet/id575923525" target="_blank" data-g-event="Store" data-g-action="Apple App Store" data-g-label="header:desktop">
-                                        <i class="material-icons sprite-apple get-app-menu__ios-icon"></i>iOS
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </li>
             </ul>
@@ -101,23 +78,22 @@
             </div>
             <div>
             </div>
+        </div>
+    </div>
 </header>
 
 <div class="hero hero--home">
     <div class="hero__bg-container">
         <div class="hero__bg-container-overlay">
             <h1>Machine Learning Assistant<br>for Analysts</h1>
-            <a href="https://wallet.google.com/?utm_source=wallet&utm_campaign=send-money&utm_medium=website-send" class="get-app hero__btn mdl-button mdl-js-button mdl-button--raised mdl-button--white-colored" target="_blank" data-g-event="Send Money" data-g-action="click" data-g-label="hero">
+            <a href="https://wallet.google.com/?utm_source=wallet&utm_campaign=send-money&utm_medium=website-send" class="get-app hero__btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored margin-right" target="_blank" data-g-event="Send Money" data-g-action="click" data-g-label="hero">
                 Try app (invite only)
             </a>
-            <a href="https://wallet.google.com/?utm_source=wallet&utm_campaign=send-money&utm_medium=website-request" class="get-app hero__btn mdl-button mdl-js-button mdl-button--raised mdl-button--white-colored" target="_blank" data-g-event="Request Money" data-g-action="click" data-g-label="hero">
+            <a href="https://wallet.google.com/?utm_source=wallet&utm_campaign=send-money&utm_medium=website-request" class="get-app hero__btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" target="_blank" data-g-event="Request Money" data-g-action="click" data-g-label="hero">
                 Watch video
             </a>
         </div>
     </div>
-    <button class="hero__fab mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-shadow--4dp" data-scroll-to="section--welcome" data-g-event="FAB" data-g-action="click" data-g-label="Down to content">
-        <i class="material-icons">&#xE313;</i>
-    </button>
 </div><section class="section section--welcome section--text-left section--rev section--align-image-bottom">
     <div class="aux">
         <div class="grid grid--bottom">
@@ -132,7 +108,7 @@
             <picture>
                 <!--[if IE 9]><video style="display: none;"><![endif]-->
                 <source srcset="media/step1.png" media="(min-width: 769px)">
-                <source srcset="/wallet/static/images/pages/home/sections/welcome/welcome-mobile.jpg" media="(max-width: 768px)">
+                <source srcset="media/step1.png" media="(max-width: 768px)">
                 <!--[if IE 9]></video><![endif]-->
                 <img srcset="media/step1.png" alt="Welcome to the new Google Wallet.">
             </picture>
@@ -152,7 +128,7 @@
             <picture>
                 <!--[if IE 9]><video style="display: none;"><![endif]-->
                 <source srcset="media/step2.png" media="(min-width: 769px)">
-                <source srcset="/wallet/static/images/pages/home/sections/notifications/notifications-7.0-mobile.jpg" media="(max-width: 768px)">
+                <source srcset="media/step2.png" media="(max-width: 768px)">
                 <!--[if IE 9]></video><![endif]-->
                 <img srcset="media/step2.png" alt="Receive money directly in your bank account">
             </picture>
@@ -174,7 +150,7 @@
             <picture>
                 <!--[if IE 9]><video style="display: none;"><![endif]-->
                 <source srcset="media/step3.png" media="(min-width: 481px)">
-                <source srcset="/wallet/static/images/pages/home/sections/safety/safety-mobile.png" media="(max-width: 480px)">
+                <source srcset="media/step3.png" media="(max-width: 480px)">
                 <!--[if IE 9]></video><![endif]-->
                 <img srcset="media/step3.png" alt="Keep your money safe">
             </picture>
@@ -182,21 +158,22 @@
         </div>
     </div>
 
-    <div class="aux section__modules">
-        <div class="grid">
-            <div class="grid__item one-whole lap--one-half desk--one-half section__module">
-                <img src="media/data-encryption.png" alt="Data encryption">
-                <h4>Data encryption</h4>
-                <p>We make sure your data is in good hands. We use Google Cloud for storage and only use the data with your permission.</a></p>
-            </div>
-            <div class="grid__item one-whole lap--one-half desk--one-half section__module">
-                <img src="media/fraud-protection.png" alt="Fraud protection">
-                <h4>Expertise</h4>
-                <p>We have a background as data scientists at Google and in traditional industries. In other words, we know the problems faced by analysts and use our learnings from Google to solve them for you.</p>
-            </div>
-        </div>
-    </div>
-</section><section class="section section--support section--grey">
+    <!--<div class="aux section__modules">-->
+        <!--<div class="grid">-->
+            <!--<div class="grid__item one-whole lap&#45;&#45;one-half desk&#45;&#45;one-half section__module">-->
+                <!--<img src="media/data-encryption.png" alt="Data encryption">-->
+                <!--<h4>Data encryption</h4>-->
+                <!--<p>We make sure your data is in good hands. We use Google Cloud for storage and only use the data with your permission.</a></p>-->
+            <!--</div>-->
+            <!--<div class="grid__item one-whole lap&#45;&#45;one-half desk&#45;&#45;one-half section__module">-->
+                <!--<img src="media/fraud-protection.png" alt="Fraud protection">-->
+                <!--<h4>Expertise</h4>-->
+                <!--<p>We have a background as data scientists at Google and in traditional industries. In other words, we know the problems faced by analysts and use our learnings from Google to solve them for you.</p>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+</section>
+<section class="section section--support">
     <div class="aux">
         <div class="grid">
             <div class="help-item grid__item one-whole lap--one-half desk--one-half">
@@ -217,12 +194,6 @@
             <ul>
                 <li><a href="https://support.google.com/wallet/?hl=en#topic=3209987" data-g-label="Help Center">Contact us</a></li>
                 <li><a href="https://support.google.com/wallet/?hl=en#topic=3209987" data-g-label="Help Center">FAQ</a></li>
-            </ul>
-        </div>
-        <div class="site-footer__bottom">
-            <ul>
-                <li><a href="https://www.google.com/intl/en/policies/privacy/" data-g-label="Privacy">Privacy</a></li>
-                <li><a href="http://www.google.com/intl/en/policies/terms/" data-g-label="Terms">Terms</a></li>
             </ul>
         </div>
     </div>

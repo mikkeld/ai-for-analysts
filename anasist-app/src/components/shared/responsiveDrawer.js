@@ -21,6 +21,7 @@ import {
   Link,
   NavLink
 } from 'react-router-dom';
+import logo from '../../media/logo.png';
 
 const logoPath = 'https://firebasestorage.googleapis.com/v0/b/fire-app-9c904.appspot.com/o/logo_edward_moore_clean.png?alt=media&token=d609c491-a185-4375-b3c3-08a3dad30655';
 const drawerWidth = 240;
@@ -131,7 +132,7 @@ class ResponsiveDrawer extends React.Component {
     const drawer = (
       <div>
         <div className={classes.drawerHeader}>
-          {/*<img src={logoPath} style={{width:'80%'}}/>*/}
+          <img src={logo} style={{width:'60%', marginLeft:20, marginTop: 20}}/>
         </div>
         <Divider />
         <List className={classes.root}>

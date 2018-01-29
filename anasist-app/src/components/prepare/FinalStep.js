@@ -8,6 +8,7 @@ import ExpansionPanel, {
 import Typography from 'material-ui/Typography';
 import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 import Icon from 'material-ui/Icon';
+import {getModels} from "../../utils/modelsService";
 
 const styles = theme => ({
   root: {
@@ -33,6 +34,10 @@ class FinalStep extends Component {
   state = {
     expanded: null,
   };
+
+  componentDidMount() {
+    this.props.prepareAssessment();
+  }
 
   handleChange = panel => (event, expanded) => {
     this.setState({
