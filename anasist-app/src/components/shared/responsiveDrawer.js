@@ -208,6 +208,7 @@ class ResponsiveDrawer extends React.Component {
             <Drawer
               type="permanent"
               open
+              style={{height: '100vh'}}
               classes={{
                 paper: classes.drawerPaper,
               }}

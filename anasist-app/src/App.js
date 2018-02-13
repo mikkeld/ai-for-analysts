@@ -46,7 +46,8 @@ class App extends Component {
         <Route render={({location}) => (
           <ResponsiveDrawer componentTitle={this.findComponent(location)}
                             location={location}
-                            user={null}>
+                            user={null}
+          >
             <div className="App">
               <Route exact path="/" component={Home}/>
               <Route exact path="/new_project" component={Prepare}/>
